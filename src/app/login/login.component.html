@@ -1,6 +1,6 @@
 <h1> Login Page </h1>
-<app-auth-view>
-  <ng-container authorized>
+<!--<app-auth-view>-->
+<!--  <ng-container authorized>-->
     @if(this.authConfig.account){
       <table>
         <tr><th>Name</th><td>{{this.authConfig.account.name}}</td></tr>
@@ -11,8 +11,8 @@
       <br/>
       <button (click)="logout()">Logout</button>
     }
-  </ng-container>
-  <ng-container notAuthorized>
+<!--  </ng-container>-->
+<!--  <ng-container notAuthorized>-->
     <button (click)="login()">Login with Microsoft Account</button>
-  </ng-container>
-</app-auth-view>
+<!--  </ng-container>-->
+<!--</app-auth-view>-->

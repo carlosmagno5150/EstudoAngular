@@ -13,7 +13,7 @@ export class AuthViewComponent {
   readonly authConfig = useAuth();
 
   public isAuthorized(){
-    return this.authConfig.account
+    return this.authConfig ?? false;
   }
 
 }

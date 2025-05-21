@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthViewComponent} from '../security/auth-view/auth-view.component';
 import {RouterLink} from '@angular/router';
-import {useAuth} from '../authConfig';
 import {AppConfig, ConfigService} from '../service/config.service';
+import {initializeApp, TData} from '../authConfig';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +15,7 @@ import {AppConfig, ConfigService} from '../service/config.service';
 })
 export class HomeComponent implements OnInit {
 
-  readonly authConfig = useAuth();
+  authConfig : TData | undefined;
   config : AppConfig | undefined;
 
   constructor(private configService: ConfigService) {
@@ -23,10 +23,12 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-      this.configService.loadConfig().subscribe((config: AppConfig) => {
-        this.config = config;
-        console.log("config", this.config);
-      });
+    this.configService.loadConfig().subscribe((config: AppConfig) => {
+      this.config = config;
+      console.log("config", this.config);
+    });
+
+
   }
 
 }

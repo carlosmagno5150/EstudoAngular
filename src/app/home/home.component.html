@@ -1,8 +1,8 @@
 <h1>home page</h1>
 <app-auth-view>
   <ng-container authorized>
-    @if(this.authConfig.account){
-      Welcome <b>{{this.authConfig.account.name}}</b>
+    @if(this.authConfig?.account){
+      Welcome <b>{{this.authConfig?.account?.name}}</b>
     }
   </ng-container>
   <ng-container notAuthorized>
@@ -11,3 +11,5 @@
 </app-auth-view>
 <p>home ends</p>
 Aki Esta: {{config?.clientId}}
+
+
